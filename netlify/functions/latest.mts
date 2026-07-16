@@ -12,6 +12,26 @@ const json = (body: unknown, status = 200) =>
     headers: { "Content-Type": "application/json", "Cache-Control": "no-store" },
   });
 
+/**
+ * Manual mode: public/manual-payload.json (deployed with the site) serves as
+ * the payload whenever the cache sheet is unavailable — edit that file and
+ * push to put data on the dashboard without the pipeline.
+ */
+async function manualFallback(): Promise<Response | null> {
+  const base = process.env.URL;
+  if (!base) return null;
+  try {
+    const res = await fetch(`${base}/manual-payload.json`);
+    if (!res.ok) return null;
+    return json(await res.json());
+  } catch {
+    return null;
+  }
+}
+
+const fail = async (message: string, status: number) =>
+  (await manualFallback()) ?? json({ error: message }, status);
+
 /** Deep-scan any gviz cell structure for payload JSON strings. */
 function collectPayloads(value: unknown, found: Record<string, unknown>[], depth = 0): void {
   if (value == null || depth > 8) return;
@@ -40,33 +60,30 @@ export default async () => {
   let text: string;
   try {
     const res = await fetch(url, { headers: { Accept: "application/json" } });
-    if (!res.ok) return json({ error: `cache sheet fetch failed (${res.status})` }, 502);
+    if (!res.ok) return fail(`cache sheet fetch failed (${res.status})`, 502);
     text = await res.text();
   } catch {
-    return json({ error: "cache sheet unreachable" }, 502);
+    return fail("cache sheet unreachable", 502);
   }
 
   // gviz wraps JSON in a JS call; a private sheet returns an HTML login page.
   const start = text.indexOf("{");
   const end = text.lastIndexOf("}");
   if (text.trimStart().startsWith("<") || start === -1 || end <= start) {
-    return json(
-      { error: "cache sheet not readable — share it as 'Anyone with the link: Viewer'" },
-      502,
-    );
+    return fail("cache sheet not readable — share it as 'Anyone with the link: Viewer'", 502);
   }
 
   let table: unknown;
   try {
     table = JSON.parse(text.slice(start, end + 1));
   } catch {
-    return json({ error: "cache sheet returned unparseable data" }, 502);
+    return fail("cache sheet returned unparseable data", 502);
   }
 
   const payloads: Record<string, unknown>[] = [];
   collectPayloads(table, payloads);
   if (payloads.length === 0) {
-    return json({ error: "cache sheet has no payload rows yet — run an analysis first" }, 404);
+    return fail("cache sheet has no payload rows yet — run an analysis first", 404);
   }
 
   payloads.sort((a, b) =>

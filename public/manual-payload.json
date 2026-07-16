@@ -1,0 +1,30 @@
+{
+  "runId": "manual-2026-07-17-001",
+  "generatedAt": "2026-07-17T00:30:00Z",
+  "payloadVersion": "1.0.0",
+  "farm": {
+    "status": "Healthy",
+    "kpis": {
+      "avgPerformanceRatio": 0.9389106306871869
+    }
+  },
+  "stations": [],
+  "alerts": [],
+  "criticalPanels": [],
+  "maintenancePlan": [],
+  "aiInsights": {
+    "headline": "No anomalies detected, and the farm is operating efficiently.",
+    "summary": "The farm's performance ratio is high, indicating efficient operation. The temperature loss is relatively low, suggesting minimal impact on efficiency. The battery SOC is moderate, indicating a balanced charge and discharge cycle. The farm is operating within expected parameters. No maintenance or issues are currently required.",
+    "anomalies": [],
+    "predictions": [
+      { "entityId": "farm", "prediction": "Next 24h production outlook: stable" },
+      { "entityId": "farm", "prediction": "Maintenance risk: low" },
+      { "entityId": "farm", "prediction": "Grid dependency outlook: stable" }
+    ],
+    "recommendations": [
+      { "text": "Continue monitoring the farm's performance to ensure sustained efficiency." },
+      { "text": "Review the battery's charge and discharge cycle to optimize its lifespan." }
+    ]
+  },
+  "map": []
+}
