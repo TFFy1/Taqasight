@@ -2,11 +2,17 @@
   command = "npm run build"
   publish = "dist"
 
-# Proxy all /api/* calls to the n8n webhook host to avoid CORS.
-# Replace YOUR-N8N-HOST with the real Fusion AI n8n instance before go-live.
+# Proxy /api/* to the Fusion AI orchestrator webhooks (CORS-free).
+# Endpoint-to-webhook mapping lives here, never in components.
+# First matching rule wins: specific endpoints first, generic fallback last.
+[[redirects]]
+  from = "/api/analyze"
+  to = "https://stg-orch-api.abafusion.ai/webhook/webhook-xcwdpcsew0brrlwl0yaronmk"
+  status = 200
+
 [[redirects]]
   from = "/api/*"
-  to = "https://YOUR-N8N-HOST/webhook/:splat"
+  to = "https://stg-orch-api.abafusion.ai/webhook/:splat"
   status = 200
 
 # SPA fallback — client-side routing handles everything else.

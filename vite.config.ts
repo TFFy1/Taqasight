@@ -10,6 +10,22 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  // Local-dev mirror of the netlify.toml proxy rules (redirects only apply
+  // on Netlify). Keep both in sync when webhook mappings change.
+  server: {
+    proxy: {
+      "/api/analyze": {
+        target: "https://stg-orch-api.abafusion.ai",
+        changeOrigin: true,
+        rewrite: () => "/webhook/webhook-xcwdpcsew0brrlwl0yaronmk",
+      },
+      "/api": {
+        target: "https://stg-orch-api.abafusion.ai",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, "/webhook"),
+      },
+    },
+  },
   build: {
     rollupOptions: {
       output: {
