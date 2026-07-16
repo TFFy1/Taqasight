@@ -1,0 +1,93 @@
+@import "@fontsource-variable/space-grotesk";
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "tailwindcss";
+
+/* Hex values mirror src/styles/tokens.ts — change them together. */
+@theme {
+  --color-*: initial;
+  --color-bg: #071c3d;
+  --color-bg-deep: #051225;
+  --color-surface: #0b2a5b;
+  --color-surface-2: #123b6e;
+  --color-line: #1e4b85;
+  --color-text-hi: #eaf2fc;
+  --color-text-mid: #a8bfdc;
+  --color-text-low: #7e95b5;
+  --color-accent: #2a7acb;
+  --color-accent-2: #5b9fe3;
+  --color-amber: #f0c42a;
+  --color-ok: #3ecf8e;
+  --color-warn: #f0c42a;
+  --color-crit: #f26d6d;
+  --color-info: #5b9fe3;
+  --color-offline: #5c6f8c;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --font-display: "Space Grotesk Variable", "Space Grotesk", system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --radius-card: 0.875rem;
+
+  --shadow-card: 0 1px 0 0 rgb(255 255 255 / 0.04) inset, 0 8px 24px -12px rgb(2 8 20 / 0.8);
+  --shadow-pop: 0 12px 40px -8px rgb(2 8 20 / 0.9);
+
+  --animate-rise: rise 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-bg text-text-hi font-sans antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-text-hi);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

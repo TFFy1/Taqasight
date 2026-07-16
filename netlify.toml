@@ -1,0 +1,16 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Proxy all /api/* calls to the n8n webhook host to avoid CORS.
+# Replace YOUR-N8N-HOST with the real Fusion AI n8n instance before go-live.
+[[redirects]]
+  from = "/api/*"
+  to = "https://YOUR-N8N-HOST/webhook/:splat"
+  status = 200
+
+# SPA fallback — client-side routing handles everything else.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
