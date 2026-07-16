@@ -19,6 +19,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: () => "/webhook/webhook-bir6qybpaazi77sq2wxolq5x/analyze",
       },
+      "/api/latest": {
+        target: "https://stg-orch-api.abafusion.ai",
+        changeOrigin: true,
+        rewrite: () => "/webhook/webhook-l3ob2h86slgvg0wxdpjr7f2h/latest",
+      },
       "/api": {
         target: "https://stg-orch-api.abafusion.ai",
         changeOrigin: true,
