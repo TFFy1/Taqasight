@@ -45,7 +45,8 @@ export function useAlerts(status?: AlertStatus) {
 export function useRunAnalysis() {
   const qc = useQueryClient();
   return useMutation<DashboardPayload, ApiError>({
-    mutationFn: () => api.analyze(),
+    // Pass the runId we already have so analyze() can detect the fresh run.
+    mutationFn: () => api.analyze(qc.getQueryData<DashboardPayload>(LATEST_KEY)?.runId),
     onSuccess: (data) => {
       qc.setQueryData(LATEST_KEY, data);
       void qc.invalidateQueries({ queryKey: ALERTS_KEY });

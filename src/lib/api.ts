@@ -42,10 +42,17 @@ export class ApiError extends Error {
 
 const MAX_ATTEMPTS = 3;
 const BASE_BACKOFF_MS = 500;
+/** Async analyze: how long we poll /latest for a fresh runId, and how often. */
+const ANALYZE_TIMEOUT_MS = 180_000;
+const ANALYZE_POLL_MS = 5_000;
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-async function fetchJson(path: string, init?: RequestInit): Promise<unknown> {
+async function fetchJson(
+  path: string,
+  init?: RequestInit,
+  opts?: { allowNonJson?: boolean },
+): Promise<unknown> {
   let lastError = new ApiError("network", "Pipeline unreachable");
   for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
     if (attempt > 0) {
@@ -65,6 +72,7 @@ async function fetchJson(path: string, init?: RequestInit): Promise<unknown> {
       try {
         return await res.json();
       } catch {
+        if (opts?.allowNonJson) return undefined;
         throw new ApiError("contract", "Pipeline returned a non-JSON response");
       }
     }
@@ -97,16 +105,39 @@ export const api = {
     return validate(payloadSchema, raw, "latest");
   },
 
-  /** POST /webhook/analyze — trigger a full pipeline run, returns fresh payload. */
-  async analyze(): Promise<DashboardPayload> {
-    const raw = isMockMode()
-      ? await (await mockMod()).mockAnalyze()
-      : await fetchJson(`${API_BASE}/analyze`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: "{}",
-        });
-    return validate(payloadSchema, raw, "analyze");
+  /**
+   * POST /webhook/analyze — the Fusion AI trigger acks immediately
+   * (RespondType: immediate) and runs the pipeline async; the flow's final
+   * node writes the payload to the cache sheet. We poll /latest until a
+   * payload with a new runId lands. Mock mode stays synchronous.
+   */
+  async analyze(currentRunId?: string): Promise<DashboardPayload> {
+    if (isMockMode()) {
+      const raw = await (await mockMod()).mockAnalyze();
+      return validate(payloadSchema, raw, "analyze");
+    }
+    await fetchJson(
+      `${API_BASE}/analyze`,
+      { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" },
+      { allowNonJson: true },
+    );
+    const deadline = Date.now() + ANALYZE_TIMEOUT_MS;
+    let lastError: ApiError | undefined;
+    while (Date.now() < deadline) {
+      await sleep(ANALYZE_POLL_MS);
+      try {
+        const fresh = await api.latest();
+        if (fresh.runId !== currentRunId) return fresh;
+      } catch (err) {
+        // /latest may 404 or briefly hold the old row mid-run; keep polling.
+        lastError = err instanceof ApiError ? err : lastError;
+      }
+    }
+    throw new ApiError(
+      "http",
+      "Run started, but no fresh payload appeared on /latest before timing out",
+      { detail: lastError?.message ?? "Is the latest webhook live and the cache sheet written?" },
+    );
   },
 
   /** GET /webhook/history?entity=&id=&days= — time-series KPIs per entity. */
