@@ -59,3 +59,17 @@ trend arrays, so the LLM sees validated trends, never raw history. The
   empty / error states.
 - No GPS in `map[]` -> schematic grid grouped Station -> Inverter -> String
   (coordinates are never faked).
+
+## CI/CD
+
+`.github/workflows/ci-cd.yml`: every push/PR runs `npm ci` + `npm run build`
+(typecheck + production build); pushes to `main` additionally deploy `dist/`
+to Netlify. The deploy step skips with a warning until two repo secrets exist:
+
+```bash
+gh secret set NETLIFY_AUTH_TOKEN   # app.netlify.com -> User settings -> Applications -> New access token
+gh secret set NETLIFY_SITE_ID     # netlify sites:create --name taqasight (or Site settings -> Site ID)
+```
+
+Alternative: connect the repo via Netlify's native Git integration instead —
+the workflow then keeps acting as CI only (deploy stays skipped).
