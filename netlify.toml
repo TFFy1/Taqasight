@@ -10,10 +10,8 @@
   to = "https://stg-orch-api.abafusion.ai/webhook/webhook-bir6qybpaazi77sq2wxolq5x/analyze"
   status = 200
 
-[[redirects]]
-  from = "/api/latest"
-  to = "https://stg-orch-api.abafusion.ai/webhook/webhook-l3ob2h86slgvg0wxdpjr7f2h/latest"
-  status = 200
+# /api/latest is served by netlify/functions/latest.mts (config.path),
+# which reads the cache Google Sheet directly — no orchestrator webhook.
 
 [[redirects]]
   from = "/api/*"
