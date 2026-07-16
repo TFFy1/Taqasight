@@ -17,7 +17,7 @@ export default defineConfig({
       "/api/analyze": {
         target: "https://stg-orch-api.abafusion.ai",
         changeOrigin: true,
-        rewrite: () => "/webhook/webhook-xcwdpcsew0brrlwl0yaronmk",
+        rewrite: () => "/webhook/webhook-xcwdpcsew0brrlwl0yaronmk/analyze",
       },
       "/api": {
         target: "https://stg-orch-api.abafusion.ai",

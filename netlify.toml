@@ -7,7 +7,7 @@
 # First matching rule wins: specific endpoints first, generic fallback last.
 [[redirects]]
   from = "/api/analyze"
-  to = "https://stg-orch-api.abafusion.ai/webhook/webhook-xcwdpcsew0brrlwl0yaronmk"
+  to = "https://stg-orch-api.abafusion.ai/webhook/webhook-xcwdpcsew0brrlwl0yaronmk/analyze"
   status = 200
 
 [[redirects]]
