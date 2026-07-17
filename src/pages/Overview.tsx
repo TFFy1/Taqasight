@@ -71,8 +71,8 @@ export function Overview() {
   const recommendations = aiInsights?.recommendations.slice(0, 3) ?? [];
 
   return (
-    <div className="space-y-7">
-      <Card className="animate-rise p-6">
+    <div className="stagger space-y-7">
+      <Card className="p-6">
         <div className="grid gap-6 lg:grid-cols-[auto_1fr_auto] lg:items-center">
           <HealthGauge score={farm.healthScore} status={farm.status} />
           <div className="min-w-0">
@@ -111,7 +111,7 @@ export function Overview() {
 
       <section>
         <SectionTitle hint="7-day trend, delta vs. yesterday">Farm KPIs</SectionTitle>
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
+        <div className="stagger grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
           <KpiCard
             label="Performance ratio"
             value={fmtRatioPct(kpis?.avgPerformanceRatio)}
