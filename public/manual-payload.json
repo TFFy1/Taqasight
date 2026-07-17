@@ -1,29 +1,39 @@
 {
-  "runId": "manual-2026-07-17-002",
-  "generatedAt": "2026-07-17T01:15:00Z",
+  "runId": "manual-2026-07-17-003",
+  "generatedAt": "2026-07-17T02:10:00Z",
   "payloadVersion": "1.0.0",
   "farm": {
+    "healthScore": 94,
     "status": "Healthy",
     "kpis": {
-      "avgPerformanceRatio": 0.9389106306871869
+      "avgPerformanceRatio": 0.9389106306871869,
+      "totalACPower_kW": 43.07970999999999
     }
   },
-  "stations": [],
+  "stations": [
+    {
+      "stationId": "Default",
+      "healthScore": 94,
+      "status": "Healthy",
+      "kpis": { "avgPR": 0.9389106306871869 },
+      "inverters": []
+    }
+  ],
   "alerts": [],
   "criticalPanels": [],
   "maintenancePlan": [],
   "aiInsights": {
-    "headline": "All systems are functioning within expected parameters, with no anomalies detected and a high performance ratio of 0.9389.",
-    "summary": "The farm's average performance ratio of 0.9389 indicates efficient energy conversion, with a low average temperature loss of 0.0878. The battery state of charge (SOC) is at 73.6%, which is within the expected operating range. Grid import and export are balanced, with 125 kW imported and 225 kW exported, indicating a stable grid interaction. No maintenance actions are currently required. Continue routine inspections and monitoring to ensure ongoing optimal performance.",
+    "headline": "0 anomalies detected, performance ratio at 93.89%",
+    "summary": "The farm is operating at a high performance ratio of 0.9389, with no anomalies detected. The average temperature loss is 0.08775. The battery SOC is at 73.6%. Grid import and export are at 125 and 225 respectively.",
     "anomalies": [],
     "predictions": [
-      { "entityId": "farm", "prediction": "Next 24h production outlook: stable" },
-      { "entityId": "farm", "prediction": "Maintenance risk: low" },
-      { "entityId": "farm", "prediction": "Grid dependency outlook: stable" }
+      { "entityId": "farm", "prediction": "stable production", "failureProb_pct": 0 }
     ],
     "recommendations": [
-      { "text": "Continue routine inspections and monitoring to ensure ongoing optimal performance.", "impact": "low", "effort": "low" }
+      { "text": "No maintenance required at this time", "impact": "low", "effort": "low" }
     ]
   },
-  "map": []
+  "map": [
+    { "panelId": "P001", "stationId": "Default", "status": "healthy", "healthScore": 94 }
+  ]
 }
