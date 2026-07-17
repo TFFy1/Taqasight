@@ -1,6 +1,6 @@
 {
-  "runId": "manual-2026-07-17-001",
-  "generatedAt": "2026-07-17T00:30:00Z",
+  "runId": "manual-2026-07-17-002",
+  "generatedAt": "2026-07-17T01:15:00Z",
   "payloadVersion": "1.0.0",
   "farm": {
     "status": "Healthy",
@@ -13,8 +13,8 @@
   "criticalPanels": [],
   "maintenancePlan": [],
   "aiInsights": {
-    "headline": "No anomalies detected, and the farm is operating efficiently.",
-    "summary": "The farm's performance ratio is high, indicating efficient operation. The temperature loss is relatively low, suggesting minimal impact on efficiency. The battery SOC is moderate, indicating a balanced charge and discharge cycle. The farm is operating within expected parameters. No maintenance or issues are currently required.",
+    "headline": "All systems are functioning within expected parameters, with no anomalies detected and a high performance ratio of 0.9389.",
+    "summary": "The farm's average performance ratio of 0.9389 indicates efficient energy conversion, with a low average temperature loss of 0.0878. The battery state of charge (SOC) is at 73.6%, which is within the expected operating range. Grid import and export are balanced, with 125 kW imported and 225 kW exported, indicating a stable grid interaction. No maintenance actions are currently required. Continue routine inspections and monitoring to ensure ongoing optimal performance.",
     "anomalies": [],
     "predictions": [
       { "entityId": "farm", "prediction": "Next 24h production outlook: stable" },
@@ -22,8 +22,7 @@
       { "entityId": "farm", "prediction": "Grid dependency outlook: stable" }
     ],
     "recommendations": [
-      { "text": "Continue monitoring the farm's performance to ensure sustained efficiency." },
-      { "text": "Review the battery's charge and discharge cycle to optimize its lifespan." }
+      { "text": "Continue routine inspections and monitoring to ensure ongoing optimal performance.", "impact": "low", "effort": "low" }
     ]
   },
   "map": []
