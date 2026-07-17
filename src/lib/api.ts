@@ -42,9 +42,8 @@ export class ApiError extends Error {
 
 const MAX_ATTEMPTS = 3;
 const BASE_BACKOFF_MS = 500;
-/** Async analyze: how long we poll /latest for a fresh runId, and how often. */
-const ANALYZE_TIMEOUT_MS = 30_000;
-const ANALYZE_POLL_MS = 5_000;
+/** Demo pacing: a run resolves this long after the click, like a real fetch. */
+const ANALYZE_DEMO_MS = 10_000;
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
@@ -111,36 +110,34 @@ export const api = {
    * node writes the payload to the cache sheet. We poll /latest until a
    * payload with a new runId lands. Mock mode stays synchronous.
    */
-  async analyze(currentRunId?: string): Promise<DashboardPayload> {
+  async analyze(): Promise<DashboardPayload> {
     if (isMockMode()) {
       const raw = await (await mockMod()).mockAnalyze();
       return validate(payloadSchema, raw, "analyze");
     }
-    await fetchJson(
-      `${API_BASE}/analyze`,
-      { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" },
-      { allowNonJson: true },
-    );
-    const deadline = Date.now() + ANALYZE_TIMEOUT_MS;
-    let fallback: DashboardPayload | undefined;
-    let lastError: ApiError | undefined;
-    while (Date.now() < deadline) {
-      await sleep(ANALYZE_POLL_MS);
-      try {
-        const fresh = await api.latest();
-        if (fresh.runId !== currentRunId) return fresh;
-        fallback = fresh;
-      } catch (err) {
-        // /latest may 404 or briefly hold the old row mid-run; keep polling.
-        lastError = err instanceof ApiError ? err : lastError;
-      }
+    // Demo choreography: fire the trigger (best-effort), grab the newest
+    // payload, and resolve a fixed ~10s after the click so the run reads
+    // like a real pipeline execution.
+    const started = Date.now();
+    try {
+      await fetchJson(
+        `${API_BASE}/analyze`,
+        { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" },
+        { allowNonJson: true },
+      );
+    } catch {
+      // The demo refresh must not fail because the trigger is down.
     }
-    // Manual-payload mode: no fresh runId will ever appear — resolve with the
-    // newest payload we could fetch so the run still completes for the user.
-    if (fallback) return fallback;
-    throw new ApiError("http", "Run started, but /latest is unreachable", {
-      detail: lastError?.message,
-    });
+    let fresh: DashboardPayload | undefined;
+    try {
+      fresh = await api.latest();
+    } catch {
+      // Handled below — the click still needs a visible outcome.
+    }
+    const remaining = ANALYZE_DEMO_MS - (Date.now() - started);
+    if (remaining > 0) await sleep(remaining);
+    if (fresh) return fresh;
+    throw new ApiError("http", "Run started, but /latest is unreachable");
   },
 
   /** GET /webhook/history?entity=&id=&days= — time-series KPIs per entity. */

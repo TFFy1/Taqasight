@@ -54,11 +54,12 @@ export function getLastRunAt(): string | undefined {
 export function useRunAnalysis() {
   const qc = useQueryClient();
   return useMutation<DashboardPayload, ApiError>({
-    // Pass the runId we already have so analyze() can detect the fresh run.
-    mutationFn: () => api.analyze(qc.getQueryData<DashboardPayload>(LATEST_KEY)?.runId),
-    onSuccess: (data) => {
+    mutationFn: () => api.analyze(),
+    onSuccess: () => {
       lastRunAt = new Date().toISOString();
-      qc.setQueryData(LATEST_KEY, { ...data, generatedAt: lastRunAt });
+      // Reset (not set) so every view drops to its loading skeleton and
+      // re-renders — the run visibly "refreshes the page" with fetched data.
+      void qc.resetQueries({ queryKey: LATEST_KEY });
       void qc.invalidateQueries({ queryKey: ALERTS_KEY });
     },
   });
