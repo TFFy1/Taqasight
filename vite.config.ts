@@ -19,9 +19,21 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: () => "/webhook/webhook-bir6qybpaazi77sq2wxolq5x/analyze",
       },
-      // Plain `npm run dev` borrows the deployed function; `netlify dev`
-      // would serve it locally instead.
+      // Plain `npm run dev` borrows the deployed functions; `netlify dev`
+      // would serve them locally instead.
       "/api/latest": {
+        target: "https://taqasight.netlify.app",
+        changeOrigin: true,
+      },
+      "/api/history": {
+        target: "https://taqasight.netlify.app",
+        changeOrigin: true,
+      },
+      "/api/alerts": {
+        target: "https://taqasight.netlify.app",
+        changeOrigin: true,
+      },
+      "/api/maintenance": {
         target: "https://taqasight.netlify.app",
         changeOrigin: true,
       },

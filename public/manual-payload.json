@@ -1,39 +1,2112 @@
 {
-  "runId": "manual-2026-07-17-003",
-  "generatedAt": "2026-07-17T02:10:00Z",
+  "runId": "2026-07-17T00:16:08.027Z-9dd6",
+  "generatedAt": "2026-07-17T00:17:08.027Z",
   "payloadVersion": "1.0.0",
   "farm": {
-    "healthScore": 94,
-    "status": "Healthy",
+    "healthScore": 78,
+    "status": "Monitoring",
     "kpis": {
-      "avgPerformanceRatio": 0.9389106306871869,
-      "totalACPower_kW": 43.07970999999999
+      "avgPerformanceRatio": 0.87,
+      "avgInverterEff_pct": 95.1,
+      "avgPanelTemp_C": 44.2,
+      "avgSoilingIndex": 0.14,
+      "totalACPower_kW": 41.2,
+      "totalDailyEnergy_kWh": 228.4,
+      "selfSufficiency_pct": 71,
+      "gridDependency_pct": 12
+    },
+    "trend": {
+      "healthScore7d": [
+        82,
+        81,
+        80,
+        79,
+        77,
+        78,
+        78
+      ],
+      "pr7d": [
+        0.9,
+        0.89,
+        0.89,
+        0.88,
+        0.86,
+        0.87,
+        0.87
+      ],
+      "energy7d": [
+        238.1,
+        236.4,
+        234.9,
+        231.2,
+        226.8,
+        227.5,
+        228.4
+      ],
+      "acPower7d": [
+        43,
+        42.7,
+        42.4,
+        41.8,
+        40.9,
+        41,
+        41.2
+      ],
+      "selfSufficiency7d": [
+        74,
+        73,
+        73,
+        72,
+        70,
+        71,
+        71
+      ],
+      "soiling7d": [
+        0.11,
+        0.11,
+        0.12,
+        0.12,
+        0.13,
+        0.14,
+        0.14
+      ],
+      "inverterEff7d": [
+        95.8,
+        95.7,
+        95.6,
+        95.4,
+        95,
+        95.1,
+        95.1
+      ]
     }
   },
   "stations": [
     {
-      "stationId": "Default",
-      "healthScore": 94,
+      "stationId": "S1",
+      "healthScore": 84,
+      "status": "Monitoring",
+      "kpis": {
+        "avgPR": 0.86,
+        "avgInverterEff_pct": 95.6,
+        "avgSoilingIndex": 0.21
+      },
+      "trend": {
+        "pr7d": [
+          0.9,
+          0.9,
+          0.89,
+          0.88,
+          0.87,
+          0.86,
+          0.86
+        ]
+      },
+      "inverters": [
+        {
+          "inverterId": "INV1",
+          "avgEff_pct": 95.8,
+          "status": "Monitoring",
+          "strings": [
+            {
+              "stringId": "STR1",
+              "avgPR": 0.89,
+              "imbalance_pct": 1.2
+            },
+            {
+              "stringId": "STR2",
+              "avgPR": 0.8,
+              "imbalance_pct": 3.8
+            }
+          ]
+        },
+        {
+          "inverterId": "INV2",
+          "avgEff_pct": 95.4,
+          "status": "Warning",
+          "strings": [
+            {
+              "stringId": "STR3",
+              "avgPR": 0.88,
+              "imbalance_pct": 1.5
+            },
+            {
+              "stringId": "STR4",
+              "avgPR": 0.82,
+              "imbalance_pct": 4.6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stationId": "S2",
+      "healthScore": 66,
+      "status": "Warning",
+      "kpis": {
+        "avgPR": 0.81,
+        "avgInverterEff_pct": 92.9,
+        "avgSoilingIndex": 0.13
+      },
+      "trend": {
+        "pr7d": [
+          0.88,
+          0.87,
+          0.86,
+          0.85,
+          0.83,
+          0.82,
+          0.81
+        ]
+      },
+      "inverters": [
+        {
+          "inverterId": "INV3",
+          "avgEff_pct": 91.4,
+          "status": "Warning",
+          "strings": [
+            {
+              "stringId": "STR5",
+              "avgPR": 0.79,
+              "imbalance_pct": 6.2
+            },
+            {
+              "stringId": "STR6",
+              "avgPR": 0.81,
+              "imbalance_pct": 2.9
+            }
+          ]
+        },
+        {
+          "inverterId": "INV4",
+          "avgEff_pct": 94.5,
+          "status": "Healthy",
+          "strings": [
+            {
+              "stringId": "STR7",
+              "avgPR": 0.86,
+              "imbalance_pct": 1.1
+            },
+            {
+              "stringId": "STR8",
+              "avgPR": 0.85,
+              "imbalance_pct": 1.7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stationId": "S3",
+      "healthScore": 93,
       "status": "Healthy",
-      "kpis": { "avgPR": 0.9389106306871869 },
-      "inverters": []
+      "kpis": {
+        "avgPR": 0.9,
+        "avgInverterEff_pct": 96.2,
+        "avgSoilingIndex": 0.08
+      },
+      "trend": {
+        "pr7d": [
+          0.9,
+          0.9,
+          0.91,
+          0.9,
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      "inverters": [
+        {
+          "inverterId": "INV5",
+          "avgEff_pct": 96.4,
+          "status": "Healthy",
+          "strings": [
+            {
+              "stringId": "STR9",
+              "avgPR": 0.9,
+              "imbalance_pct": 0.8
+            },
+            {
+              "stringId": "STR10",
+              "avgPR": 0.9,
+              "imbalance_pct": 1
+            }
+          ]
+        },
+        {
+          "inverterId": "INV6",
+          "avgEff_pct": 96,
+          "status": "Healthy",
+          "strings": [
+            {
+              "stringId": "STR11",
+              "avgPR": 0.89,
+              "imbalance_pct": 1.3
+            },
+            {
+              "stringId": "STR12",
+              "avgPR": 0.9,
+              "imbalance_pct": 0.9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stationId": "S4",
+      "healthScore": 90,
+      "status": "Healthy",
+      "kpis": {
+        "avgPR": 0.89,
+        "avgInverterEff_pct": 95.9,
+        "avgSoilingIndex": 0.1
+      },
+      "trend": {
+        "pr7d": [
+          0.89,
+          0.89,
+          0.88,
+          0.89,
+          0.89,
+          0.88,
+          0.89
+        ]
+      },
+      "inverters": [
+        {
+          "inverterId": "INV7",
+          "avgEff_pct": 96.1,
+          "status": "Healthy",
+          "strings": [
+            {
+              "stringId": "STR13",
+              "avgPR": 0.89,
+              "imbalance_pct": 1.1
+            },
+            {
+              "stringId": "STR14",
+              "avgPR": 0.88,
+              "imbalance_pct": 1.4
+            }
+          ]
+        },
+        {
+          "inverterId": "INV8",
+          "avgEff_pct": 95.7,
+          "status": "Monitoring",
+          "strings": [
+            {
+              "stringId": "STR15",
+              "avgPR": 0.88,
+              "imbalance_pct": 1.6
+            },
+            {
+              "stringId": "STR16",
+              "avgPR": 0.87,
+              "imbalance_pct": 2.2
+            }
+          ]
+        }
+      ]
     }
   ],
-  "alerts": [],
-  "criticalPanels": [],
-  "maintenancePlan": [],
+  "alerts": [
+    {
+      "alertId": "AL-0091",
+      "severity": "critical",
+      "entityType": "panel",
+      "entityId": "P042",
+      "rule": "PanelTemp_C > 60",
+      "value": 63.5,
+      "message": "Hotspot risk on P042 (S1/INV2/STR4)",
+      "ts": "2026-07-17T00:14:08.027Z",
+      "status": "open"
+    },
+    {
+      "alertId": "AL-0090",
+      "severity": "critical",
+      "entityType": "panel",
+      "entityId": "P042",
+      "rule": "PanelTemp_C > 60",
+      "value": 62.1,
+      "message": "Hotspot risk on P042 (S1/INV2/STR4)",
+      "ts": "2026-07-16T23:15:08.027Z",
+      "status": "open"
+    },
+    {
+      "alertId": "AL-0087",
+      "severity": "warning",
+      "entityType": "inverter",
+      "entityId": "INV3",
+      "rule": "InverterEff_pct < 93",
+      "value": 91.4,
+      "message": "INV3 efficiency 3.7 pts below fleet mean",
+      "ts": "2026-07-17T00:12:08.027Z",
+      "status": "open"
+    },
+    {
+      "alertId": "AL-0082",
+      "severity": "warning",
+      "entityType": "string",
+      "entityId": "STR5",
+      "rule": "StringImbalance_pct > 5",
+      "value": 6.2,
+      "message": "Current imbalance on STR5 (S2/INV3)",
+      "ts": "2026-07-17T00:11:08.027Z",
+      "status": "open"
+    },
+    {
+      "alertId": "AL-0079",
+      "severity": "warning",
+      "entityType": "panel",
+      "entityId": "P018",
+      "rule": "SoilingIndex > 0.6",
+      "value": 0.82,
+      "message": "Soiling ramp on P018 (S1/INV1/STR2)",
+      "ts": "2026-07-17T00:09:08.027Z",
+      "status": "open"
+    },
+    {
+      "alertId": "AL-0075",
+      "severity": "info",
+      "entityType": "station",
+      "entityId": "S2",
+      "rule": "StationPR declining 5d",
+      "value": 0.81,
+      "message": "S2 performance ratio declined 5 consecutive days",
+      "ts": "2026-07-17T00:08:08.027Z",
+      "status": "open"
+    },
+    {
+      "alertId": "AL-0068",
+      "severity": "warning",
+      "entityType": "panel",
+      "entityId": "P063",
+      "rule": "PR decline 5 consecutive days",
+      "value": 0.74,
+      "message": "Sustained PR decline on P063 (S2/INV3/STR6)",
+      "ts": "2026-07-15T22:23:08.027Z",
+      "status": "acknowledged"
+    },
+    {
+      "alertId": "AL-0061",
+      "severity": "info",
+      "entityType": "panel",
+      "entityId": "P160",
+      "rule": "No telemetry 24h",
+      "message": "P160 (S4/INV7) stopped reporting — comms or optimizer",
+      "ts": "2026-07-15T17:23:08.027Z",
+      "status": "open"
+    },
+    {
+      "alertId": "AL-0047",
+      "severity": "warning",
+      "entityType": "panel",
+      "entityId": "P019",
+      "rule": "SoilingIndex > 0.6",
+      "value": 0.64,
+      "message": "Soiling ramp on P019 (S1/INV1/STR2)",
+      "ts": "2026-07-14T22:23:08.027Z",
+      "status": "resolved"
+    }
+  ],
+  "criticalPanels": [
+    {
+      "panelId": "P042",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR4",
+      "pr": 0.71,
+      "temp_C": 63.5,
+      "soilingIndex": 0.12,
+      "failureProb_pct": 74,
+      "trend": {
+        "pr7d": [
+          0.86,
+          0.85,
+          0.84,
+          0.82,
+          0.79,
+          0.75,
+          0.71
+        ]
+      }
+    },
+    {
+      "panelId": "P063",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR6",
+      "pr": 0.74,
+      "temp_C": 47.1,
+      "soilingIndex": 0.18,
+      "failureProb_pct": 61,
+      "trend": {
+        "pr7d": [
+          0.85,
+          0.84,
+          0.82,
+          0.8,
+          0.78,
+          0.76,
+          0.74
+        ]
+      }
+    },
+    {
+      "panelId": "P018",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR2",
+      "pr": 0.78,
+      "temp_C": 45.3,
+      "soilingIndex": 0.82,
+      "failureProb_pct": 22,
+      "trend": {
+        "pr7d": [
+          0.88,
+          0.87,
+          0.85,
+          0.83,
+          0.81,
+          0.79,
+          0.78
+        ]
+      }
+    }
+  ],
+  "maintenancePlan": [
+    {
+      "priority": 1,
+      "entityId": "P042",
+      "action": "Inspect for hotspot / bypass diode failure",
+      "type": "corrective",
+      "deadline": "24h",
+      "estimatedGain_kWh_day": 1.1,
+      "rationale": "Temperature 19°C above station mean with declining PR over 5 consecutive days."
+    },
+    {
+      "priority": 2,
+      "entityId": "STR2",
+      "action": "Schedule cleaning — soiling ramp on P017–P019",
+      "type": "preventive",
+      "deadline": "72h",
+      "estimatedGain_kWh_day": 2.3,
+      "rationale": "DustIndex rose from 0.12 to 0.82 in 6 days; PR loss correlated."
+    },
+    {
+      "priority": 3,
+      "entityId": "INV3",
+      "action": "Diagnose efficiency drop; verify DC input balance on STR5",
+      "type": "corrective",
+      "deadline": "72h",
+      "estimatedGain_kWh_day": 1.8,
+      "rationale": "Efficiency 3.7 pts below fleet mean and STR5 imbalance 6.2% — consistent with a DC-side fault."
+    },
+    {
+      "priority": 4,
+      "entityId": "P063",
+      "action": "Run IV-curve trace before predicted failure window",
+      "type": "preventive",
+      "deadline": "2w",
+      "estimatedGain_kWh_day": 0.9,
+      "rationale": "Failure probability 61% within 3 weeks if the current PR slope continues."
+    },
+    {
+      "priority": 5,
+      "entityId": "P160",
+      "action": "Restore telemetry — check optimizer and comms link",
+      "type": "corrective",
+      "deadline": "1w",
+      "estimatedGain_kWh_day": 0.4,
+      "rationale": "No data for 31h; panel state unknown and excluded from aggregates."
+    }
+  ],
   "aiInsights": {
-    "headline": "0 anomalies detected, performance ratio at 93.89%",
-    "summary": "The farm is operating at a high performance ratio of 0.9389, with no anomalies detected. The average temperature loss is 0.08775. The battery SOC is at 73.6%. Grid import and export are at 125 and 225 respectively.",
-    "anomalies": [],
+    "headline": "Farm output down 4% this week — two treatable causes identified.",
+    "summary": "Fleet health slipped from 82 to 78 over the last seven days, driven almost entirely by Station S2 and a localized soiling ramp on S1. INV3 (S2) is converting 3.7 points below the fleet mean with a 6.2% current imbalance on STR5, which points to a DC-side fault rather than irradiance. Separately, dust accumulation on STR2 panels P017–P019 rose from 0.12 to 0.82 in six days and now costs an estimated 2.3 kWh/day. Both causes are treatable within 72 hours; the hotspot on P042 is the only safety-relevant item and should be inspected first.",
+    "anomalies": [
+      {
+        "entityId": "INV3",
+        "explanation": "Efficiency dropped to 91.4% while sibling INV4 held 94.5% under identical irradiance — the divergence began 5 days ago and correlates with STR5 imbalance, indicating a string-level DC fault.",
+        "confidence": "high"
+      },
+      {
+        "entityId": "STR2",
+        "explanation": "Soiling index on P017–P019 ramped 6.8× in six days while neighboring strings stayed flat — consistent with localized dust deposition, not sensor drift.",
+        "confidence": "high"
+      },
+      {
+        "entityId": "P042",
+        "explanation": "Panel temperature 19°C above station mean with PR down 15 points in 7 days — thermal signature matches a bypass diode failure or cell-level hotspot.",
+        "confidence": "medium"
+      }
+    ],
     "predictions": [
-      { "entityId": "farm", "prediction": "stable production", "failureProb_pct": 0 }
+      {
+        "entityId": "P063",
+        "prediction": "Likely failure within 3 weeks if PR decline continues at the current slope",
+        "failureProb_pct": 61
+      },
+      {
+        "entityId": "S2",
+        "prediction": "Station PR recovers to ~0.86 within a week of correcting INV3/STR5"
+      }
     ],
     "recommendations": [
-      { "text": "No maintenance required at this time", "impact": "low", "effort": "low" }
+      {
+        "text": "Dispatch a technician to P042 within 24h — hotspot signatures carry fire risk and the panel is still energized.",
+        "impact": "high",
+        "effort": "low"
+      },
+      {
+        "text": "Book a cleaning crew for STR2 (P017–P019) this week; 2.3 kWh/day is recoverable for the cost of one wash.",
+        "impact": "high",
+        "effort": "low"
+      },
+      {
+        "text": "Schedule an electrical inspection of INV3's DC inputs and STR5 connectors before the weekend to stop the S2 slide.",
+        "impact": "medium",
+        "effort": "medium"
+      }
     ]
   },
   "map": [
-    { "panelId": "P001", "stationId": "Default", "status": "healthy", "healthScore": 94 }
+    {
+      "panelId": "P001",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR1",
+      "status": "healthy",
+      "healthScore": 96
+    },
+    {
+      "panelId": "P002",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR1",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P003",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR1",
+      "status": "healthy",
+      "healthScore": 88
+    },
+    {
+      "panelId": "P004",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR1",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P005",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR1",
+      "status": "healthy",
+      "healthScore": 96
+    },
+    {
+      "panelId": "P006",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR1",
+      "status": "monitoring",
+      "healthScore": 80
+    },
+    {
+      "panelId": "P007",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR1",
+      "status": "healthy",
+      "healthScore": 97
+    },
+    {
+      "panelId": "P008",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR1",
+      "status": "healthy",
+      "healthScore": 95
+    },
+    {
+      "panelId": "P009",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR1",
+      "status": "healthy",
+      "healthScore": 92
+    },
+    {
+      "panelId": "P010",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR1",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P011",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR1",
+      "status": "healthy",
+      "healthScore": 95
+    },
+    {
+      "panelId": "P012",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR1",
+      "status": "healthy",
+      "healthScore": 90
+    },
+    {
+      "panelId": "P013",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR2",
+      "status": "monitoring",
+      "healthScore": 73
+    },
+    {
+      "panelId": "P014",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR2",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P015",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR2",
+      "status": "healthy",
+      "healthScore": 96
+    },
+    {
+      "panelId": "P016",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR2",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P017",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR2",
+      "status": "warning",
+      "healthScore": 67
+    },
+    {
+      "panelId": "P018",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR2",
+      "status": "warning",
+      "healthScore": 58
+    },
+    {
+      "panelId": "P019",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR2",
+      "status": "warning",
+      "healthScore": 63
+    },
+    {
+      "panelId": "P020",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR2",
+      "status": "healthy",
+      "healthScore": 96
+    },
+    {
+      "panelId": "P021",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR2",
+      "status": "healthy",
+      "healthScore": 95
+    },
+    {
+      "panelId": "P022",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR2",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P023",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR2",
+      "status": "healthy",
+      "healthScore": 96
+    },
+    {
+      "panelId": "P024",
+      "stationId": "S1",
+      "inverterId": "INV1",
+      "stringId": "STR2",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P025",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR3",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P026",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR3",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P027",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR3",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P028",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR3",
+      "status": "healthy",
+      "healthScore": 90
+    },
+    {
+      "panelId": "P029",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR3",
+      "status": "healthy",
+      "healthScore": 95
+    },
+    {
+      "panelId": "P030",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR3",
+      "status": "healthy",
+      "healthScore": 88
+    },
+    {
+      "panelId": "P031",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR3",
+      "status": "monitoring",
+      "healthScore": 82
+    },
+    {
+      "panelId": "P032",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR3",
+      "status": "healthy",
+      "healthScore": 93
+    },
+    {
+      "panelId": "P033",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR3",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P034",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR3",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P035",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR3",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P036",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR3",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P037",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR4",
+      "status": "healthy",
+      "healthScore": 93
+    },
+    {
+      "panelId": "P038",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR4",
+      "status": "monitoring",
+      "healthScore": 80
+    },
+    {
+      "panelId": "P039",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR4",
+      "status": "healthy",
+      "healthScore": 92
+    },
+    {
+      "panelId": "P040",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR4",
+      "status": "healthy",
+      "healthScore": 93
+    },
+    {
+      "panelId": "P041",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR4",
+      "status": "healthy",
+      "healthScore": 96
+    },
+    {
+      "panelId": "P042",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR4",
+      "status": "critical",
+      "healthScore": 31
+    },
+    {
+      "panelId": "P043",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR4",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P044",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR4",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P045",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR4",
+      "status": "healthy",
+      "healthScore": 88
+    },
+    {
+      "panelId": "P046",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR4",
+      "status": "healthy",
+      "healthScore": 90
+    },
+    {
+      "panelId": "P047",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR4",
+      "status": "healthy",
+      "healthScore": 97
+    },
+    {
+      "panelId": "P048",
+      "stationId": "S1",
+      "inverterId": "INV2",
+      "stringId": "STR4",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P049",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR5",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P050",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR5",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P051",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR5",
+      "status": "monitoring",
+      "healthScore": 78
+    },
+    {
+      "panelId": "P052",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR5",
+      "status": "healthy",
+      "healthScore": 96
+    },
+    {
+      "panelId": "P053",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR5",
+      "status": "healthy",
+      "healthScore": 88
+    },
+    {
+      "panelId": "P054",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR5",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P055",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR5",
+      "status": "monitoring",
+      "healthScore": 74
+    },
+    {
+      "panelId": "P056",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR5",
+      "status": "healthy",
+      "healthScore": 96
+    },
+    {
+      "panelId": "P057",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR5",
+      "status": "healthy",
+      "healthScore": 96
+    },
+    {
+      "panelId": "P058",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR5",
+      "status": "monitoring",
+      "healthScore": 76
+    },
+    {
+      "panelId": "P059",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR5",
+      "status": "healthy",
+      "healthScore": 97
+    },
+    {
+      "panelId": "P060",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR5",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P061",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR6",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P062",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR6",
+      "status": "healthy",
+      "healthScore": 92
+    },
+    {
+      "panelId": "P063",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR6",
+      "status": "warning",
+      "healthScore": 55
+    },
+    {
+      "panelId": "P064",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR6",
+      "status": "healthy",
+      "healthScore": 95
+    },
+    {
+      "panelId": "P065",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR6",
+      "status": "healthy",
+      "healthScore": 95
+    },
+    {
+      "panelId": "P066",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR6",
+      "status": "healthy",
+      "healthScore": 90
+    },
+    {
+      "panelId": "P067",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR6",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P068",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR6",
+      "status": "monitoring",
+      "healthScore": 74
+    },
+    {
+      "panelId": "P069",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR6",
+      "status": "healthy",
+      "healthScore": 90
+    },
+    {
+      "panelId": "P070",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR6",
+      "status": "healthy",
+      "healthScore": 97
+    },
+    {
+      "panelId": "P071",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR6",
+      "status": "healthy",
+      "healthScore": 93
+    },
+    {
+      "panelId": "P072",
+      "stationId": "S2",
+      "inverterId": "INV3",
+      "stringId": "STR6",
+      "status": "healthy",
+      "healthScore": 93
+    },
+    {
+      "panelId": "P073",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR7",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P074",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR7",
+      "status": "healthy",
+      "healthScore": 92
+    },
+    {
+      "panelId": "P075",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR7",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P076",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR7",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P077",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR7",
+      "status": "monitoring",
+      "healthScore": 75
+    },
+    {
+      "panelId": "P078",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR7",
+      "status": "healthy",
+      "healthScore": 96
+    },
+    {
+      "panelId": "P079",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR7",
+      "status": "healthy",
+      "healthScore": 90
+    },
+    {
+      "panelId": "P080",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR7",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P081",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR7",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P082",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR7",
+      "status": "healthy",
+      "healthScore": 92
+    },
+    {
+      "panelId": "P083",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR7",
+      "status": "healthy",
+      "healthScore": 90
+    },
+    {
+      "panelId": "P084",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR7",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P085",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR8",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P086",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR8",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P087",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR8",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P088",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR8",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P089",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR8",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P090",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR8",
+      "status": "healthy",
+      "healthScore": 97
+    },
+    {
+      "panelId": "P091",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR8",
+      "status": "monitoring",
+      "healthScore": 79
+    },
+    {
+      "panelId": "P092",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR8",
+      "status": "healthy",
+      "healthScore": 95
+    },
+    {
+      "panelId": "P093",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR8",
+      "status": "healthy",
+      "healthScore": 93
+    },
+    {
+      "panelId": "P094",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR8",
+      "status": "healthy",
+      "healthScore": 92
+    },
+    {
+      "panelId": "P095",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR8",
+      "status": "healthy",
+      "healthScore": 96
+    },
+    {
+      "panelId": "P096",
+      "stationId": "S2",
+      "inverterId": "INV4",
+      "stringId": "STR8",
+      "status": "healthy",
+      "healthScore": 96
+    },
+    {
+      "panelId": "P097",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR9",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P098",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR9",
+      "status": "healthy",
+      "healthScore": 96
+    },
+    {
+      "panelId": "P099",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR9",
+      "status": "healthy",
+      "healthScore": 93
+    },
+    {
+      "panelId": "P100",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR9",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P101",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR9",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P102",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR9",
+      "status": "healthy",
+      "healthScore": 95
+    },
+    {
+      "panelId": "P103",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR9",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P104",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR9",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P105",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR9",
+      "status": "healthy",
+      "healthScore": 95
+    },
+    {
+      "panelId": "P106",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR9",
+      "status": "healthy",
+      "healthScore": 95
+    },
+    {
+      "panelId": "P107",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR9",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P108",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR9",
+      "status": "healthy",
+      "healthScore": 92
+    },
+    {
+      "panelId": "P109",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR10",
+      "status": "healthy",
+      "healthScore": 97
+    },
+    {
+      "panelId": "P110",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR10",
+      "status": "healthy",
+      "healthScore": 92
+    },
+    {
+      "panelId": "P111",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR10",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P112",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR10",
+      "status": "healthy",
+      "healthScore": 90
+    },
+    {
+      "panelId": "P113",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR10",
+      "status": "monitoring",
+      "healthScore": 78
+    },
+    {
+      "panelId": "P114",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR10",
+      "status": "healthy",
+      "healthScore": 93
+    },
+    {
+      "panelId": "P115",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR10",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P116",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR10",
+      "status": "healthy",
+      "healthScore": 97
+    },
+    {
+      "panelId": "P117",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR10",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P118",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR10",
+      "status": "healthy",
+      "healthScore": 95
+    },
+    {
+      "panelId": "P119",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR10",
+      "status": "healthy",
+      "healthScore": 96
+    },
+    {
+      "panelId": "P120",
+      "stationId": "S3",
+      "inverterId": "INV5",
+      "stringId": "STR10",
+      "status": "healthy",
+      "healthScore": 88
+    },
+    {
+      "panelId": "P121",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR11",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P122",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR11",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P123",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR11",
+      "status": "healthy",
+      "healthScore": 92
+    },
+    {
+      "panelId": "P124",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR11",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P125",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR11",
+      "status": "monitoring",
+      "healthScore": 78
+    },
+    {
+      "panelId": "P126",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR11",
+      "status": "healthy",
+      "healthScore": 88
+    },
+    {
+      "panelId": "P127",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR11",
+      "status": "healthy",
+      "healthScore": 90
+    },
+    {
+      "panelId": "P128",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR11",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P129",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR11",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P130",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR11",
+      "status": "healthy",
+      "healthScore": 93
+    },
+    {
+      "panelId": "P131",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR11",
+      "status": "healthy",
+      "healthScore": 95
+    },
+    {
+      "panelId": "P132",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR11",
+      "status": "healthy",
+      "healthScore": 93
+    },
+    {
+      "panelId": "P133",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR12",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P134",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR12",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P135",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR12",
+      "status": "healthy",
+      "healthScore": 95
+    },
+    {
+      "panelId": "P136",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR12",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P137",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR12",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P138",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR12",
+      "status": "monitoring",
+      "healthScore": 76
+    },
+    {
+      "panelId": "P139",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR12",
+      "status": "monitoring",
+      "healthScore": 75
+    },
+    {
+      "panelId": "P140",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR12",
+      "status": "healthy",
+      "healthScore": 93
+    },
+    {
+      "panelId": "P141",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR12",
+      "status": "healthy",
+      "healthScore": 92
+    },
+    {
+      "panelId": "P142",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR12",
+      "status": "healthy",
+      "healthScore": 93
+    },
+    {
+      "panelId": "P143",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR12",
+      "status": "healthy",
+      "healthScore": 95
+    },
+    {
+      "panelId": "P144",
+      "stationId": "S3",
+      "inverterId": "INV6",
+      "stringId": "STR12",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P145",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR13",
+      "status": "healthy",
+      "healthScore": 92
+    },
+    {
+      "panelId": "P146",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR13",
+      "status": "healthy",
+      "healthScore": 95
+    },
+    {
+      "panelId": "P147",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR13",
+      "status": "healthy",
+      "healthScore": 97
+    },
+    {
+      "panelId": "P148",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR13",
+      "status": "healthy",
+      "healthScore": 92
+    },
+    {
+      "panelId": "P149",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR13",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P150",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR13",
+      "status": "healthy",
+      "healthScore": 92
+    },
+    {
+      "panelId": "P151",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR13",
+      "status": "healthy",
+      "healthScore": 92
+    },
+    {
+      "panelId": "P152",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR13",
+      "status": "healthy",
+      "healthScore": 95
+    },
+    {
+      "panelId": "P153",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR13",
+      "status": "healthy",
+      "healthScore": 90
+    },
+    {
+      "panelId": "P154",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR13",
+      "status": "monitoring",
+      "healthScore": 83
+    },
+    {
+      "panelId": "P155",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR13",
+      "status": "monitoring",
+      "healthScore": 74
+    },
+    {
+      "panelId": "P156",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR13",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P157",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR14",
+      "status": "monitoring",
+      "healthScore": 84
+    },
+    {
+      "panelId": "P158",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR14",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P159",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR14",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P160",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR14",
+      "status": "offline"
+    },
+    {
+      "panelId": "P161",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR14",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P162",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR14",
+      "status": "healthy",
+      "healthScore": 90
+    },
+    {
+      "panelId": "P163",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR14",
+      "status": "healthy",
+      "healthScore": 88
+    },
+    {
+      "panelId": "P164",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR14",
+      "status": "healthy",
+      "healthScore": 95
+    },
+    {
+      "panelId": "P165",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR14",
+      "status": "healthy",
+      "healthScore": 93
+    },
+    {
+      "panelId": "P166",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR14",
+      "status": "healthy",
+      "healthScore": 92
+    },
+    {
+      "panelId": "P167",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR14",
+      "status": "monitoring",
+      "healthScore": 76
+    },
+    {
+      "panelId": "P168",
+      "stationId": "S4",
+      "inverterId": "INV7",
+      "stringId": "STR14",
+      "status": "healthy",
+      "healthScore": 95
+    },
+    {
+      "panelId": "P169",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR15",
+      "status": "healthy",
+      "healthScore": 90
+    },
+    {
+      "panelId": "P170",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR15",
+      "status": "healthy",
+      "healthScore": 88
+    },
+    {
+      "panelId": "P171",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR15",
+      "status": "healthy",
+      "healthScore": 92
+    },
+    {
+      "panelId": "P172",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR15",
+      "status": "healthy",
+      "healthScore": 88
+    },
+    {
+      "panelId": "P173",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR15",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P174",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR15",
+      "status": "healthy",
+      "healthScore": 92
+    },
+    {
+      "panelId": "P175",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR15",
+      "status": "healthy",
+      "healthScore": 97
+    },
+    {
+      "panelId": "P176",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR15",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P177",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR15",
+      "status": "healthy",
+      "healthScore": 90
+    },
+    {
+      "panelId": "P178",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR15",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P179",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR15",
+      "status": "healthy",
+      "healthScore": 89
+    },
+    {
+      "panelId": "P180",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR15",
+      "status": "healthy",
+      "healthScore": 95
+    },
+    {
+      "panelId": "P181",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR16",
+      "status": "healthy",
+      "healthScore": 93
+    },
+    {
+      "panelId": "P182",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR16",
+      "status": "monitoring",
+      "healthScore": 79
+    },
+    {
+      "panelId": "P183",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR16",
+      "status": "healthy",
+      "healthScore": 96
+    },
+    {
+      "panelId": "P184",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR16",
+      "status": "healthy",
+      "healthScore": 91
+    },
+    {
+      "panelId": "P185",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR16",
+      "status": "healthy",
+      "healthScore": 97
+    },
+    {
+      "panelId": "P186",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR16",
+      "status": "healthy",
+      "healthScore": 96
+    },
+    {
+      "panelId": "P187",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR16",
+      "status": "healthy",
+      "healthScore": 93
+    },
+    {
+      "panelId": "P188",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR16",
+      "status": "monitoring",
+      "healthScore": 83
+    },
+    {
+      "panelId": "P189",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR16",
+      "status": "monitoring",
+      "healthScore": 76
+    },
+    {
+      "panelId": "P190",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR16",
+      "status": "healthy",
+      "healthScore": 94
+    },
+    {
+      "panelId": "P191",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR16",
+      "status": "healthy",
+      "healthScore": 92
+    },
+    {
+      "panelId": "P192",
+      "stationId": "S4",
+      "inverterId": "INV8",
+      "stringId": "STR16",
+      "status": "healthy",
+      "healthScore": 90
+    }
   ]
 }
