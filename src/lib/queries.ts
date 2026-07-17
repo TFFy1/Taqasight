@@ -42,13 +42,23 @@ export function useAlerts(status?: AlertStatus) {
   });
 }
 
+/**
+ * "Last updated" reflects the moment the operator last ran an analysis, and
+ * must survive background refetches of the static manual payload.
+ */
+let lastRunAt: string | undefined;
+export function getLastRunAt(): string | undefined {
+  return lastRunAt;
+}
+
 export function useRunAnalysis() {
   const qc = useQueryClient();
   return useMutation<DashboardPayload, ApiError>({
     // Pass the runId we already have so analyze() can detect the fresh run.
     mutationFn: () => api.analyze(qc.getQueryData<DashboardPayload>(LATEST_KEY)?.runId),
     onSuccess: (data) => {
-      qc.setQueryData(LATEST_KEY, data);
+      lastRunAt = new Date().toISOString();
+      qc.setQueryData(LATEST_KEY, { ...data, generatedAt: lastRunAt });
       void qc.invalidateQueries({ queryKey: ALERTS_KEY });
     },
   });

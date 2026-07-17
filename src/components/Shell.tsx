@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { NavLink } from "react-router-dom";
 import {
   Bell,
@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { RunAnalysis } from "@/components/RunAnalysis";
 import { cx } from "@/components/ui";
-import { usePayload } from "@/lib/queries";
+import { getLastRunAt, usePayload } from "@/lib/queries";
 import { isMockMode } from "@/lib/api";
 import { timeAgo } from "@/lib/format";
 
@@ -28,6 +28,20 @@ const NAV: Array<{ to: string; label: string; icon: LucideIcon }> = [
 export function Shell({ children }: { children: ReactNode }) {
   const { data } = usePayload();
   const openAlerts = data?.alerts.filter((a) => a.status === "open").length ?? 0;
+
+  // Re-render periodically so the relative "Last updated" keeps recalculating.
+  const [, setTick] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setTick((n) => n + 1), 30_000);
+    return () => clearInterval(t);
+  }, []);
+
+  // An operator-triggered run is fresher than the (static) payload timestamp.
+  const runStamp = getLastRunAt();
+  const updatedAt =
+    runStamp && (!data?.generatedAt || runStamp > data.generatedAt)
+      ? runStamp
+      : data?.generatedAt;
 
   const navItems = NAV.map(({ to, label, icon: Icon }) => (
     <NavLink
@@ -86,8 +100,8 @@ export function Shell({ children }: { children: ReactNode }) {
             <div className="min-w-0">
               <p className="truncate text-sm text-text-mid">
                 Last updated{" "}
-                <span className="font-medium text-text-hi" title={data?.generatedAt}>
-                  {data ? timeAgo(data.generatedAt) : "—"}
+                <span className="font-medium text-text-hi" title={updatedAt}>
+                  {updatedAt ? timeAgo(updatedAt) : "—"}
                 </span>
               </p>
             </div>

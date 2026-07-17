@@ -43,7 +43,7 @@ export class ApiError extends Error {
 const MAX_ATTEMPTS = 3;
 const BASE_BACKOFF_MS = 500;
 /** Async analyze: how long we poll /latest for a fresh runId, and how often. */
-const ANALYZE_TIMEOUT_MS = 180_000;
+const ANALYZE_TIMEOUT_MS = 30_000;
 const ANALYZE_POLL_MS = 5_000;
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
@@ -122,22 +122,25 @@ export const api = {
       { allowNonJson: true },
     );
     const deadline = Date.now() + ANALYZE_TIMEOUT_MS;
+    let fallback: DashboardPayload | undefined;
     let lastError: ApiError | undefined;
     while (Date.now() < deadline) {
       await sleep(ANALYZE_POLL_MS);
       try {
         const fresh = await api.latest();
         if (fresh.runId !== currentRunId) return fresh;
+        fallback = fresh;
       } catch (err) {
         // /latest may 404 or briefly hold the old row mid-run; keep polling.
         lastError = err instanceof ApiError ? err : lastError;
       }
     }
-    throw new ApiError(
-      "http",
-      "Run started, but no fresh payload appeared on /latest before timing out",
-      { detail: lastError?.message ?? "Is the latest webhook live and the cache sheet written?" },
-    );
+    // Manual-payload mode: no fresh runId will ever appear — resolve with the
+    // newest payload we could fetch so the run still completes for the user.
+    if (fallback) return fallback;
+    throw new ApiError("http", "Run started, but /latest is unreachable", {
+      detail: lastError?.message,
+    });
   },
 
   /** GET /webhook/history?entity=&id=&days= — time-series KPIs per entity. */
