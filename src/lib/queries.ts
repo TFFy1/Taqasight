@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useIsMutating, useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { api, ApiError, type EntityType } from "@/lib/api";
 import type { Alert, AlertStatus, DashboardPayload } from "@/types/payload";
 
@@ -51,9 +51,17 @@ export function getLastRunAt(): string | undefined {
   return lastRunAt;
 }
 
+const RUN_ANALYSIS_KEY = ["run-analysis"] as const;
+
+/** True while a Run analysis is in flight — drives the full-page fetch state. */
+export function useAnalysisRunning(): boolean {
+  return useIsMutating({ mutationKey: RUN_ANALYSIS_KEY }) > 0;
+}
+
 export function useRunAnalysis() {
   const qc = useQueryClient();
   return useMutation<DashboardPayload, ApiError>({
+    mutationKey: RUN_ANALYSIS_KEY,
     mutationFn: () => api.analyze(),
     onSuccess: () => {
       lastRunAt = new Date().toISOString();
